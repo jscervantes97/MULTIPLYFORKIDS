@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondoseriesnumericas"
+    tools:context=".MainActivity" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/buttonRegresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar" />
+        <TextView
+            android:id="@+id/txtAciertos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFF"
+            android:text="Aciertos: 0"
+            />
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffFFFF"
+            android:text="Incorrectos: 0"
+            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Series Numéricas"
+                    android:textAlignment="center"
+                    android:textColor="#ffff"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+
+                        <ImageView
+                            android:id="@+id/tuimageview"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ovni" />
+
+                        <TextView
+                            android:id="@+id/textoNumero1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10"
+                            android:textColor="#ff000000"
+                            android:textSize="45dp" />
+                    </RelativeLayout>
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/signosuma" />
+                    </RelativeLayout>
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+
+                        <ImageView
+                            android:id="@+id/tuimageview2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ovni2" />
+
+                        <TextView
+                            android:id="@+id/textoNumero2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10"
+                            android:textColor="#ff000000"
+                            android:textSize="45dp" />
+                    </RelativeLayout>
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/signosuma" />
+                    </RelativeLayout>
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+                        <ImageView
+                            android:id="@+id/tuimageview3"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/ovni" />
+
+                        <TextView
+                            android:id="@+id/textoNumero3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10"
+                            android:textColor="#ff000000"
+                            android:textSize="45dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/signoigual" />
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/signointerrogacion" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        >
+
+                        <ImageView
+                            android:id="@+id/tuimageview5"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/saturno" />
+
+                        <TextView
+                            android:id="@+id/respuesta1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10"
+                            android:textColor="#ff000000"
+                            android:textSize="45dp" />
+                    </RelativeLayout>
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="30dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/tuimageview6"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/saturno" />
+
+                        <TextView
+                            android:id="@+id/respuesta2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10"
+                            android:textColor="#ff000000"
+                            android:textSize="45dp" />
+                    </RelativeLayout>
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="30dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/tuimageview7"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/saturno" />
+
+                        <TextView
+                            android:id="@+id/respuesta3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="10"
+                            android:textColor="#ff000000"
+                            android:textSize="45dp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</android.widget.LinearLayout>
