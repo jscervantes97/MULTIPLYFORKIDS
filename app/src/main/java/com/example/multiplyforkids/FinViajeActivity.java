@@ -47,7 +47,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
         }
         try{
             Collections.shuffle(pilaEjercicios);
-            var_iterator = pilaEjercicios.peek();
+            //var_iterator = pilaEjercicios.peek();
             generarProblemas();
         }catch (Exception err){
             Toast.makeText(this,"Error en: " + err.getMessage(),Toast.LENGTH_LONG).show();
@@ -55,6 +55,9 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void generarProblemas(){
+        var_iterator = pilaEjercicios.pop();
+        Log.d("Var iter",""+var_iterator);
+        Log.d("Pila Ejercicios",""+pilaEjercicios);
         int numero1 = 0 ;
         int numero2 = 0 ;
         String cadenaRespuesta1 = "" ;
@@ -330,7 +333,6 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
         }
         txtIncorrectos.setText("Incorrectos: " + incorrectos);
         txtCorrectos.setText("Aciertos: " + correctos);
-        var_iterator = pilaEjercicios.peek();
         generarProblemas();
     }
 
