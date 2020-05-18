@@ -112,7 +112,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                         cadenaRespuesta2 += " + " + numero1;
                     }
                     cadenaRespuesta3 = "" + numero1 ;
-                    for(int j = 0 ; j < numero2 + 1; j++){
+                    for(int j = 0 ; j < numero2 + 2; j++){
                         cadenaRespuesta3 += " + " + numero1;
                     }
                     bancoRespuestas.add(cadenaRespuesta1);
@@ -136,7 +136,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                     }
                     String aux = numero1 + " x " + numero2 ;
                     cadenaRespuesta2 = (numero1 + 1) + " x " + (numero2+ 1) ;
-                    cadenaRespuesta3 = (numero1 - 1) + " x " + (numero2- 1) ;
+                    cadenaRespuesta3 = (numero1 + 2) + " x " + (numero2+ 2) ;
                     bancoRespuestas.add(aux);
                     bancoRespuestas.add(cadenaRespuesta2);
                     bancoRespuestas.add(cadenaRespuesta3);
@@ -153,7 +153,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                     imagen3.setImageResource(R.drawable.lata);
                     cadenaRespuesta1 = ((numero1 + 0) * (numero2+ 0))+"";
                     cadenaRespuesta2 = ((numero1 + 1) * (numero2+ 1))+"";
-                    cadenaRespuesta3 = ((numero1 - 1) * (numero2- 1))+"";
+                    cadenaRespuesta3 = ((numero1 + 2) * (numero2+ 2))+"";
                     bancoRespuestas.add(cadenaRespuesta1);
                     bancoRespuestas.add(cadenaRespuesta2);
                     bancoRespuestas.add(cadenaRespuesta3);
@@ -170,7 +170,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                     imagen3.setImageResource(R.drawable.astronauta);
                     cadenaRespuesta1 = ((numero1 + 0) * (7))+"";
                     cadenaRespuesta2 = ((numero1 + 1) * (7))+"";
-                    cadenaRespuesta3 = ((numero1 - 1) * (7))+"";
+                    cadenaRespuesta3 = ((numero1 + 2) * (7))+"";
                     bancoRespuestas.add(cadenaRespuesta1 + " dias");
                     bancoRespuestas.add(cadenaRespuesta2 + " dias");
                     bancoRespuestas.add(cadenaRespuesta3 + " dias");
@@ -192,7 +192,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                         cadenaRespuesta1 += " + " + numero1;
                     }
                     cadenaRespuesta2 = "" + numero1 ;
-                    for(int j = 0 ; j < numero2 - 2; j++){
+                    for(int j = 0 ; j < numero2 + 2; j++){
                         cadenaRespuesta2 += " + " + numero1;
                     }
                     cadenaRespuesta3 = "" + numero1 ;
@@ -217,7 +217,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                     imagen3.setImageResource(R.drawable.jupiter);
                     cadenaRespuesta1 = ((numero1 + 0) * (numero2))+"";
                     cadenaRespuesta2 = ((numero1 + 1) * (numero2 + 1))+"";
-                    cadenaRespuesta3 = ((numero1 - 1) * (numero2 - 1))+"";
+                    cadenaRespuesta3 = ((numero1 + 2) * (numero2 + 2))+"";
                     bancoRespuestas.add(cadenaRespuesta1 + " stickers");
                     bancoRespuestas.add(cadenaRespuesta2 + " stickers");
                     bancoRespuestas.add(cadenaRespuesta3 + " stickers");
@@ -304,13 +304,13 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
                     imagen1.setImageResource(R.drawable.moneda);
                     imagen2.setImageResource(R.drawable.moneda);
                     imagen3.setImageResource(R.drawable.moneda);
-                    bancoRespuestas.add("$" + (4 *numero1 * numero2));
-                    bancoRespuestas.add("$" + (4 *numero1 * numero2 + 1));
-                    bancoRespuestas.add("$" + (4 *numero1 * numero2 - 1));
+                    bancoRespuestas.add("$" + (numero1 * numero2));
+                    bancoRespuestas.add("$" + (numero1 * numero2 + 1));
+                    bancoRespuestas.add("$" + (numero1 * numero2 - 1));
                     Collections.shuffle(bancoRespuestas);
-                    respuesta = "$" + (4 * numero1 * numero2);
-                    txtEjercicios.setText("En Marte, meteoritos y estrellas fugaces pasan los martes, jueves, sábado y Domingo. Mi Papá " +
-                            "me da $"+numero1+" pesos cada semana que se de ese suceso.\n" +
+                    respuesta = "$" + (numero1 * numero2);
+                    txtEjercicios.setText("Mi Papá " +
+                            "me da $"+numero1+" pesos cada semana \n" +
                             "Si ahorro el dinero que me da cada semana. ¿Cuánto dinero juntare al paso de "+numero2+" semanas?");
                     respuesta1.setText(bancoRespuestas.get(0).toString());
                     respuesta2.setText(bancoRespuestas.get(1).toString());

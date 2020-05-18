@@ -89,6 +89,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:background="#48d1cc"
                 android:text="Series Numericas" />
 
             <Button
@@ -98,6 +99,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:background="#48d1cc"
                 android:text="Multiplicacion" />
 
             <Button
@@ -107,6 +109,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
+                android:background="#48d1cc"
                 android:text="Fin del viaje" />
 
 

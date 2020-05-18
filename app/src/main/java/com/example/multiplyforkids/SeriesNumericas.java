@@ -1,5 +1,7 @@
 package com.example.multiplyforkids;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,31 +50,59 @@ public class SeriesNumericas extends AppCompatActivity implements View.OnClickLi
     }
 
     public void generarNumeros(){
-        Random rd ;
-        int numeroGenerado = 0;
-        numeroGenerado = (int) (Math.random() * 10) + 1;
-        numeroRespuesta = numeroGenerado * 3 ;
-        numero1.setText(numeroGenerado + "");
-        numero2.setText(numeroGenerado + "");
-        numero3.setText(numeroGenerado + "");
-        //en esta parte aremos un pequeño seteo de valores aleatorios a las
-        //etiquetas que contienen las respuestas
-        numeroGenerado = (int) (Math.random() * 3) + 1;
-        if(numeroGenerado == 1){
-            respuesta1.setText(numeroRespuesta + "");
-            respuesta2.setText((numeroRespuesta + 2) + "");
-            respuesta3.setText((numeroRespuesta - 2) + "");
-        }
-        else if(numeroGenerado == 2){
-            respuesta2.setText(numeroRespuesta + "");
-            respuesta3.setText((numeroRespuesta + 2) + "");
-            respuesta1.setText((numeroRespuesta - 2) + "");
+        if(var_iterator == 10){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Has concluido con tus ejercicios con un puntaje de: " + correctos + "\n ¿Que Deseas hacer?")
+                    .setTitle("Fin Problemas");
+            builder.setPositiveButton("Reiniciar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // User clicked OK button
+
+                    correctos = 0 ;
+                    incorrectos = 0 ;
+                    var_iterator = 0 ;
+                    txtIncorrectos.setText("Incorrectos: " + incorrectos);
+                    txtCorrectos.setText("Aciertos: " + correctos);
+                    generarNumeros();
+                }
+            });
+            builder.setNegativeButton("Terminar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    finish();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
         else{
-            respuesta3.setText(numeroRespuesta + "");
-            respuesta1.setText((numeroRespuesta + 2) + "");
-            respuesta2.setText((numeroRespuesta - 2) + "");
+            Random rd ;
+            int numeroGenerado = 0;
+            numeroGenerado = (int) (Math.random() * 10) + 1;
+            numeroRespuesta = numeroGenerado * 3 ;
+            numero1.setText(numeroGenerado + "");
+            numero2.setText(numeroGenerado + "");
+            numero3.setText(numeroGenerado + "");
+            //en esta parte aremos un pequeño seteo de valores aleatorios a las
+            //etiquetas que contienen las respuestas
+            numeroGenerado = (int) (Math.random() * 3) + 1;
+            if(numeroGenerado == 1){
+                respuesta1.setText(numeroRespuesta + "");
+                respuesta2.setText((numeroRespuesta + 2) + "");
+                respuesta3.setText((numeroRespuesta - 2) + "");
+            }
+            else if(numeroGenerado == 2){
+                respuesta2.setText(numeroRespuesta + "");
+                respuesta3.setText((numeroRespuesta + 2) + "");
+                respuesta1.setText((numeroRespuesta - 2) + "");
+            }
+            else{
+                respuesta3.setText(numeroRespuesta + "");
+                respuesta1.setText((numeroRespuesta + 2) + "");
+                respuesta2.setText((numeroRespuesta - 2) + "");
+            }
+            var_iterator++;
         }
+
     }
 
     public void validarRespuesta(int botonOrigen){
