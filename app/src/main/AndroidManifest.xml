@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinViajeActivity"></activity>
+        <activity android:name=".puntajesActivity"></activity>
+        <activity android:name=".FinViajeActivity" />
         <activity android:name=".Multiplicacion" />
         <activity android:name=".SeriesNumericas" />
         <activity android:name=".IntroduccionActivity" />

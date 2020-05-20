@@ -1,6 +1,8 @@
 package com.example.multiplyforkids;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -58,6 +60,7 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
 
     public void generarProblemas(){
         if(pilaEjercicios.isEmpty()){
+            alta();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Has concluido con tus ejercicios con un puntaje de: " + correctos + "\n ¿Que Deseas hacer?")
                     .setTitle("Viaje Terminado");
@@ -344,6 +347,20 @@ public class FinViajeActivity extends AppCompatActivity implements View.OnClickL
         txtIncorrectos.setText("Incorrectos: " + incorrectos);
         txtCorrectos.setText("Aciertos: " + correctos);
         generarProblemas();
+    }
+
+    public void alta() {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        ContentValues registro = new ContentValues();
+        registro.put("codigoModalidad", 3);
+        registro.put("descripcion", "FinViaje");
+        registro.put("puntaje", correctos);
+        bd.insert("puntajes", null, registro);
+        bd.close();
+        Toast.makeText(this, "Se Guardaron los resultados de la prueba",
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override

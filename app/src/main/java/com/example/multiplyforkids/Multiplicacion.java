@@ -1,6 +1,8 @@
 package com.example.multiplyforkids;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,6 +51,7 @@ public class Multiplicacion extends AppCompatActivity implements View.OnClickLis
 
     public void generarNumeros(){
         if(var_iterator == 10){
+            alta();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Has concluido con tus ejercicios con un puntaje de: " + correctos + "\n ¿Que Deseas hacer?")
                     .setTitle("Fin Problemas");
@@ -140,5 +143,19 @@ public class Multiplicacion extends AppCompatActivity implements View.OnClickLis
         if(v.getId() == R.id.buttonRegresar){
             finish();
         }
+    }
+
+    public void alta() {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+        ContentValues registro = new ContentValues();
+        registro.put("codigoModalidad", 2);
+        registro.put("descripcion", "Multiplicacion");
+        registro.put("puntaje", correctos);
+        bd.insert("puntajes", null, registro);
+        bd.close();
+        Toast.makeText(this, "Se Guardaron los resultados de la prueba",
+                Toast.LENGTH_SHORT).show();
     }
 }

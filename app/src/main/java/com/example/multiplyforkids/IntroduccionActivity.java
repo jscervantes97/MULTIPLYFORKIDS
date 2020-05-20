@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class IntroduccionActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button boton1,boton2,boton3;
+    Button boton1,boton2,boton3,boton4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,8 @@ public class IntroduccionActivity extends AppCompatActivity implements View.OnCl
         boton1 = (Button)findViewById(R.id.button1);
         boton2 = (Button)findViewById(R.id.button2);
         boton3 = (Button)findViewById(R.id.button3);
+        boton4 = (Button)findViewById(R.id.button4);
+        boton4.setOnClickListener(this);
         boton3.setOnClickListener(this);
         boton1.setOnClickListener(this);
         boton2.setOnClickListener(this);
@@ -36,6 +38,10 @@ public class IntroduccionActivity extends AppCompatActivity implements View.OnCl
         }
         if(v.getId()== R.id.button3){
             Intent i = new Intent(this, FinViajeActivity.class );
+            startActivity(i);
+        }
+        if(v.getId()== R.id.button4){
+            Intent i = new Intent(this, puntajesActivity.class );
             startActivity(i);
         }
 
